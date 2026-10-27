@@ -26,7 +26,11 @@ public class GameTime : MonoBehaviour
     {
         Vector3 randomPosition = transform.position;
         randomPosition.y = Random.Range(minPosition, maxPosition);
-        Object.Instantiate(enemyObject, randomPosition, transform.rotation);
+        GameObject.Instantiate(enemyObject, randomPosition, transform.rotation);
+
+        float randomSpeed = Random.Range(minEnemySpeed, maxEnemySpeed);
+        EnemyMovement enemyMovement = enemy.GetComponent<EnemyMovement>();
+        enemyMovement.moveSpeed = randomSpeed;
     }
     }
 }
