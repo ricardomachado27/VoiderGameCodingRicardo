@@ -35,6 +35,9 @@ public class GameTime : MonoBehaviour
         randomPosition.y = Random.Range(minPosition, maxPosition);
         GameObject.Instantiate(enemyObject, randomPosition, transform.rotation);
 
+        int targetEnemyIndex = Random.Range(0, enemyObjects.Length);
+
+
         float randomSpeed = Random.Range(minEnemySpeed, maxEnemySpeed);
         EnemyMovement enemyMovement = enemy.GetComponent<EnemyMovement>();
         enemyMovement.moveSpeed = randomSpeed;
