@@ -18,8 +18,15 @@ public class GameTime : MonoBehaviour
         if (timer >= spawnCooldown)
         {
             timer = 0;
-            Object.Instantiate(Enemy, transform.position, transform.rotation);
-            
+            SpawnEnemy();
+
         }
+    }
+        private void SpawnEnemy()
+    {
+        Vector3 randomPosition = transform.position;
+        randomPosition.y = Random.Range(minPosition, maxPosition);
+        Object.Instantiate(enemyObject, randomPosition, transform.rotation);
+    }
     }
 }
