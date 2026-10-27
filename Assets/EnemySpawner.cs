@@ -2,7 +2,14 @@ using UnityEngine;
 
 public class GameTime : MonoBehaviour
 {
+    public GameObject enemyObject;
+    public float spawnCool;
 
+    public float minPosition;
+    public float maxPosition;
+    public float minEnemySpeed;
+
+    public float maxEnemySpeed;
     private float timer;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
